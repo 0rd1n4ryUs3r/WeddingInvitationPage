@@ -16,6 +16,13 @@ body {
     line-height: 1.6;
 }
 
+footer {
+  padding: 40px;
+  background: #e2dfd8;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
 /* HERO PARALLAX */
 .hero {
     height: 100vh;

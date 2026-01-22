@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Wedding Invitation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- SECTION 1: HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Andi & Siti</h1>
+            <p>Kami Mengundang Anda ke Pernikahan Kami</p>
+            <button onclick="scrollToSection('event')">Lihat Detail</button>
+        </div>
+    </section>
+
+    <!-- SECTION 2: EVENT DETAILS -->
+    <section id="event" class="event">
+        <h2>Detail Acara</h2>
+        <div class="event-card">
+            <p><strong>Tanggal:</strong> Minggu, 20 Juli 2026</p>
+            <p><strong>Waktu:</strong> 10.00 WIB - Selesai</p>
+            <p><strong>Tempat:</strong> Gedung Serbaguna Bahagia</p>
+        </div>
+    </section>
+
+    <!-- SECTION 3: RSVP -->
+    <section class="rsvp">
+        <h2>Konfirmasi Kehadiran</h2>
+        <form id="rsvpForm">
+            <input type="text" id="name" placeholder="Nama Anda" required>
+            <select id="attendance" required>
+                <option value="">-- Pilih Kehadiran --</option>
+                <option value="Hadir">Hadir</option>
+                <option value="Tidak Hadir">Tidak Hadir</option>
+            </select>
+            <button type="submit">Kirim</button>
+        </form>
+        <p id="responseMessage"></p>
+    </section>
+
+    <footer>
+        <p>Terima kasih atas doa dan restu Anda</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

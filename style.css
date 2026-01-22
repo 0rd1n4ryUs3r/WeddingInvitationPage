@@ -1,127 +1,118 @@
-/* Import Font */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
 
 :root {
-    --primary: #8da18d; /* Sage Green */
-    --secondary: #f4f1ea; /* Cream */
+    --sage: #8da18d;
+    --gold: #c5a059;
+    --cream: #f4f1ea;
     --dark: #333;
-    --white: #ffffff;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--secondary);
+    background-color: var(--cream);
     color: var(--dark);
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
-/* Hero Section */
+/* HERO PARALLAX */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80'); /* Gambar Wedding */
-    background-size: cover;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                      url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80');
+    background-attachment: fixed; /* Kunci background untuk efek parallax */
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     text-align: center;
     color: white;
 }
 
-.hero-content h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 4rem;
-    margin-bottom: 10px;
-}
+.sub-title { font-family: 'Alex Brush', cursive; font-size: 2.5rem; color: var(--gold); }
+h1 { font-family: 'Playfair Display', serif; font-size: 4.5rem; margin: 10px 0; }
+.date-text { font-size: 1.2rem; letter-spacing: 3px; text-transform: uppercase; }
 
-.hero-content button {
-    margin-top: 20px;
-    padding: 12px 30px;
-    border: none;
-    background: var(--primary);
+.btn-main {
+    margin-top: 30px;
+    padding: 12px 35px;
+    border-radius: 30px;
+    border: 2px solid white;
+    background: transparent;
     color: white;
-    font-weight: bold;
-    border-radius: 25px;
+    font-weight: 600;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.hero-content button:hover {
-    background: #6e806e;
-    transform: scale(1.05);
-}
+.btn-main:hover { background: white; color: var(--sage); }
 
-/* Event & RSVP Sections */
-section {
-    padding: 80px 20px;
-    text-align: center;
-}
+/* EVENT & MAP */
+section { padding: 100px 20px; text-align: center; }
+.container { max-width: 1000px; margin: 0 auto; }
 
-h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: var(--primary);
+.event-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 50px 0;
 }
 
 .event-card {
     background: white;
+    padding: 40px;
+    border-radius: 15px;
+    flex: 1;
+    min-width: 300px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.icon-big { font-size: 2rem; color: var(--gold); margin-bottom: 15px; }
+
+/* MAPS STYLE */
+.map-container { margin-top: 60px; }
+.map-wrapper {
+    margin: 20px 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.btn-map {
+    display: inline-block;
+    padding: 10px 25px;
+    background: var(--sage);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* RSVP */
+.rsvp { background-color: #e9e5db; }
+.glass-form {
+    background: white;
     max-width: 500px;
     margin: 0 auto;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-/* Form RSVP */
-#rsvpForm {
-    max-width: 400px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-input, select {
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-family: inherit;
-}
-
-button[type="submit"] {
-    background: var(--primary);
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-footer {
     padding: 40px;
-    background: #e2dfd8;
-    font-size: 0.9rem;
-    text-align: center;
+    border-radius: 20px;
 }
 
-/* Animasi Scroll Reveal sederhana */
-.event, .rsvp {
+#rsvpForm { display: flex; flex-direction: column; gap: 15px; }
+input, select { padding: 12px; border: 1px solid #ccc; border-radius: 8px; }
+.btn-submit { background: var(--sage); color: white; border: none; padding: 15px; border-radius: 8px; cursor: pointer; font-weight: bold; }
+
+/* ANIMASI REVEAL */
+.reveal {
     opacity: 0;
     transform: translateY(30px);
-    transition: all 1s ease-out;
+    transition: all 0.8s ease-out;
 }
-
-.show {
+.reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
